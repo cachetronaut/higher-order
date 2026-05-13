@@ -112,6 +112,7 @@ Remove nonessential work, duplication, and fragile complexity (lean principle: e
 - Defer abstraction until a second real use case appears.
 - Measure before optimizing; optimize only what measurement proves is hot.
 - Treat configuration, flags, and options as debt — add only with a named owner and a removal condition.
+- Before extracting shared code, confirm duplication is semantic (same domain concept), not coincidental (similar syntax, different intent). See the Rule of Two in `references/design-heuristics.md`.
 - Consult `references/lean-signals.md` for common waste patterns to eliminate.
 
 **Baseline failure this prevents:** Agents expand scope with good reasoning but no explicit gate — they justify additions post-hoc instead of testing them against predefined criteria.
@@ -184,6 +185,7 @@ Use type-safe patterns — type annotations, branded/newtypes, validated schemas
 
 - `references/poka-yoke-signals.md` — Weak point signals and design rules for Create Checkpoints
 - `references/lean-signals.md` — Waste signals and core principles for Stay Simple
+- `references/design-heuristics.md` — DRY (semantic vs. coincidental duplication) and ETC (changeability test) for Stay Simple
 - `references/python.md` — `structlog`, type hints, Pydantic, `mypy --strict`
 - `references/javascript-typescript.md` — `pino`, branded types, `zod`, strict `tsconfig.json`
 - `references/rust.md` — `tracing`, newtypes, typestate, `assert!` vs `debug_assert!`
