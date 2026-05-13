@@ -154,10 +154,7 @@ This is not busywork — a broad purpose with many exceptions is a sign you're b
 It is a scoping gate — not a completion contract. PAUSE does not define how you'll know the work is done, how you'll prove it, or how you'll prevent scope drift during execution. Those belong to other skills.
 
 - **success-criteria** — Run after PAUSE. SUCCESS defines measurable completion, evidence plans, and scope guards. PAUSE scopes the task; SUCCESS defines done.
-- **poka-yoke-principle** — PAUSE scopes the failure surface before mistake-proofing.
-- **lean-principle** — PAUSE exposes what is and is not needed before cutting waste.
-
-Run PAUSE first, then the domain-specific skill.
+Run PAUSE first, then SUCCESS for the completion contract.
 
 ## Red Flags — STOP and Rerun PAUSE
 

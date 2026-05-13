@@ -77,14 +77,16 @@ Select observable proof standards for success.
 
 Build validation into the process at known risk points.
 
-- Prefer this hierarchy for handling failure paths:
-  1. **Eliminate** — remove the possibility of failure entirely
-  2. **Prevent** — stop failure before it happens
+- Prefer this hierarchy for handling failure paths (poka-yoke):
+  1. **Eliminate** — remove the possibility of failure entirely (encode invariants in types, make illegal states unrepresentable)
+  2. **Prevent** — stop failure before it happens (validate at the boundary, replace optional flags with distinct operations)
   3. **Replace/Simplify** — use a simpler approach with fewer failure modes
   4. **Detect** — catch failure early with tests or checks
   5. **Review/Recover** — last resort, manual inspection or rollback
 
+- Design the system so the wrong action cannot happen, or so it surfaces loudly the moment it does. Correctness shifts from discipline to structure.
 - Define at least one checkpoint between starting and claiming "done."
+- Consult `references/poka-yoke-signals.md` for common weak points to check against.
 
 **Baseline failure this prevents:** Agents execute a linear sequence of actions with no stop-and-reassess points.
 
@@ -101,12 +103,16 @@ Make the result auditable and reusable from the start, not as an afterthought.
 
 ### S — Stay Simple
 
-Remove nonessential work, duplication, and fragile complexity.
+Remove nonessential work, duplication, and fragile complexity (lean principle: every line of code is a liability until it earns its keep).
 
 - Make the correct path easy and the wrong path hard.
 - The smallest useful solution is sufficient.
 - If removing something doesn't break the success criteria, remove it.
 - Scope additions must justify themselves against the criteria, not against "it would be nice."
+- Defer abstraction until a second real use case appears.
+- Measure before optimizing; optimize only what measurement proves is hot.
+- Treat configuration, flags, and options as debt — add only with a named owner and a removal condition.
+- Consult `references/lean-signals.md` for common waste patterns to eliminate.
 
 **Baseline failure this prevents:** Agents expand scope with good reasoning but no explicit gate — they justify additions post-hoc instead of testing them against predefined criteria.
 
@@ -174,8 +180,10 @@ When the task involves code, prefer structured logging over print statements. Lo
 
 Use type-safe patterns — type annotations, branded/newtypes, validated schemas at boundaries — even in dynamic languages. Use runtime assertions (`assert`) for internal invariants alongside tests.
 
-**Language references** with full examples (logging setup, type-safe patterns, assertion patterns, tool config):
+**References:**
 
+- `references/poka-yoke-signals.md` — Weak point signals and design rules for Create Checkpoints
+- `references/lean-signals.md` — Waste signals and core principles for Stay Simple
 - `references/python.md` — `structlog`, type hints, Pydantic, `mypy --strict`
 - `references/javascript-typescript.md` — `pino`, branded types, `zod`, strict `tsconfig.json`
 - `references/rust.md` — `tracing`, newtypes, typestate, `assert!` vs `debug_assert!`
