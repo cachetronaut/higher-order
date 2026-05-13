@@ -1,6 +1,6 @@
 ---
 name: deterministic-writing
-description: Use when writing specifications, change requests, ticket comments, or document updates where the reader must implement the text exactly as written.
+description: Use when writing specifications, change requests, ticket comments, or document updates where the reader must implement the text exactly as written. Also use when specs are vague, readers keep asking clarifying questions, or tickets bounce back due to ambiguity.
 ---
 
 # Deterministic Technical Writing
@@ -30,6 +30,15 @@ Write so that a developer, non-native English speaker, or automated system can i
 
 For the full 10-step document structure, see `references/steps.md`.  
 For filler words to avoid and common mistakes, see `references/reference.md`.
+
+## Relationship to Other Skills
+
+**PAUSE → SUCCESS → Deterministic Writing** — a pipeline, not alternatives.
+
+- **pause-framework** — Run first. PAUSE scopes the document: what to say, for whom, under what constraints. Deterministic writing cannot begin without a scoped purpose and audience.
+- **success-criteria** — Run after PAUSE. SUCCESS defines how you'll know the document is done and how to verify it. The quality checklist below covers writing quality; SUCCESS covers task completion.
+
+PAUSE answers *what are we writing and for whom?* SUCCESS answers *how do we know it's done?* This skill answers *how do we write it so the reader never has to ask a question?*
 
 ## Quality Checklist
 
