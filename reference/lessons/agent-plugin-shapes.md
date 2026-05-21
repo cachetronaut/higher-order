@@ -25,7 +25,7 @@ Codex plugin packaging should include:
 
 - `.codex-plugin/plugin.json`
 - `skills/<skill-name>/SKILL.md`
-- optional plugin metadata for local marketplaces
+- `.agents/plugins/marketplace.json` when a local directory should be added with `codex plugin marketplace add <path>`
 
 The Codex manifest can point at the skills directory:
 
@@ -38,6 +38,10 @@ The Codex manifest can point at the skills directory:
 That makes the skill visible to Codex. It does not automatically prove that `bin/` wrappers are added to the shell `PATH`.
 
 Treat Codex support as verified only after a real command run proves that the plugin runtime changes command execution. Until then, describe Codex support as guidance plus setup, not hard enforcement.
+
+For local marketplace installation, the path passed to `codex plugin marketplace add` must be the marketplace root, not only a plugin root. The marketplace root is supported when it contains `.agents/plugins/marketplace.json`; that file can point at the plugin root with a portable local source path such as `./`.
+
+`codex plugin marketplace upgrade` is for configured Git marketplaces. A local filesystem marketplace is refreshed by editing the local files directly or by removing and adding the marketplace again if the installed configuration needs to be recreated.
 
 ## Claude Code Shape
 
