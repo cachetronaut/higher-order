@@ -1,0 +1,33 @@
+{
+  "name": "higher-order",
+  "version": "0.1.0",
+  "description": "Higher-order reasoning, planning, design, and writing skills for Codex.",
+  "license": "UNLICENSED",
+  "keywords": [
+    "skills",
+    "reasoning",
+    "planning",
+    "design",
+    "architecture",
+    "writing"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Higher Order",
+    "shortDescription": "Reasoning guardrails for stronger agent work.",
+    "longDescription": "Higher Order packages reusable Codex skills for scoping work, defining success, writing deterministic implementation guidance, structuring projects, and reviewing UI design without adding runtime command enforcement.",
+    "developerName": "Higher Order",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Write",
+      "Reference"
+    ],
+    "defaultPrompt": [
+      "Define success before implementing this change.",
+      "Draft a deterministic implementation plan.",
+      "Review this UI spec against product constraints."
+    ],
+    "brandColor": "#2F6F5E"
+  }
+}

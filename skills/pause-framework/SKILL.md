@@ -9,7 +9,7 @@ description: Use when about to generate code, documents, prompts, plans, or any 
 
 **Think before you build.** PAUSE is a mandatory pre-execution reasoning gate that evaluates every task through five structured dimensions before any output is generated. It ensures clarity of intent, constraints, risk awareness, and correct scoping prior to execution.
 
-**Core principle:** If you can't state the purpose, audience, usage context, constraints, and edge cases in one sentence each, you don't understand the task well enough to execute it.
+**Core principle:** If you can't state the purpose, audience, usage context, constraints, and edge cases in one cohesive sentence, you don't understand the task well enough to execute it.
 
 ## When to Use
 
@@ -40,11 +40,11 @@ digraph when_to_use {
 
 ## The PAUSE Framework
 
-**This is not optional.** You must write out each field (P, A, U, S, E) with your answer before taking any action. Absorbing the principles without outputting the fields is a violation — the explicit output IS the discipline.
+**This is not optional.** You must write one complete stateback sentence before taking any action. The sentence must include purpose, audience, usage context, settings/security, and exceptions without spelling out the acronym as separate fields. Absorbing the principles without outputting the sentence is a violation — the explicit output IS the discipline.
 
 **Violating the letter of this rule is violating the spirit of the rule.**
 
-Run these five steps BEFORE your first implementation action. Output them explicitly — they are the contract for the work.
+Run these five steps BEFORE your first implementation action, then output them as one fluid sentence — that sentence is the contract for the work.
 
 ### P — Purpose
 
@@ -98,23 +98,20 @@ State conditions where the default approach would fail or need modification. Lim
 ## Output Format
 
 ```text
-P — Purpose: <one sentence: the concrete deliverable>
-A — Audience: <one sentence: who consumes this and their context>
-U — Usage: <one sentence: one-time, repeated, long-lived, or disposable>
-S — Settings/Security: <one sentence: constraints, risks, trust boundaries>
-E — Exceptions: <one or two sentences: critical edge cases>
+Stateback: I will produce <concrete deliverable> for <audience and context>, intended for <usage lifecycle>, within <settings, security, or operational constraints>, while accounting for <one or two critical exceptions>.
 ```
 
 ## Execution Gate
 
 Execution is ONLY allowed when:
-- All five PAUSE fields are explicitly written out
-- No field contains unknowns or unresolved assumptions
+- One complete PAUSE stateback sentence is explicitly written out
+- The sentence covers purpose, audience, usage, settings/security, and exceptions
+- The sentence contains no unknowns or unresolved assumptions
 - Purpose describes a result, not a process
-- Settings/Security includes relevant risk considerations
-- Exceptions are ≤ 2 (if more, re-scope Purpose first)
+- Settings/security includes relevant risk considerations
+- Exceptions are <= 2 (if more, re-scope Purpose first)
 
-If any condition fails: state what is unresolved, ask only the questions that would materially change the result, and re-run PAUSE before proceeding.
+If any condition fails: state what is unresolved, ask only the questions that would materially change the result, and rewrite the PAUSE stateback before proceeding.
 
 ## Exception Handling
 
@@ -141,15 +138,15 @@ This is not busywork — a broad purpose with many exceptions is a sign you're b
 
 | Field | Question to Answer | Output |
 |-------|-------------------|--------|
-| **P**urpose | What concrete result will be produced? | One-sentence deliverable |
-| **A**udience | Who consumes this and what do they know? | One-sentence consumer profile |
-| **U**sage | How long does this live and how often is it used? | One-sentence lifecycle |
-| **S**ettings/Security | What constraints, risks, or boundaries apply? | One-sentence risk context |
-| **E**xceptions | Where does the default approach break? | ≤ 2 critical edge cases |
+| Purpose | What concrete result will be produced? | Included in the stateback sentence |
+| Audience | Who consumes this and what do they know? | Included in the stateback sentence |
+| Usage | How long does this live and how often is it used? | Included in the stateback sentence |
+| Settings/Security | What constraints, risks, or boundaries apply? | Included in the stateback sentence |
+| Exceptions | Where does the default approach break? | <= 2 critical edge cases included in the stateback sentence |
 
 ## Relationship to Other Skills
 
-**PAUSE answers: *what are we building, for whom, and under what constraints?***
+**The PAUSE stateback answers: *what are we building, for whom, and under what constraints?***
 
 It is a scoping gate — not a completion contract. PAUSE does not define how you'll know the work is done, how you'll prove it, or how you'll prevent scope drift during execution. Those belong to other skills.
 
@@ -158,15 +155,15 @@ Run PAUSE first, then SUCCESS for the completion contract.
 
 ## Red Flags — STOP and Rerun PAUSE
 
-- You started writing code without outputting the five PAUSE fields
-- You referenced PAUSE conceptually ("the framework requires...") but didn't write the fields
+- You started writing code without outputting the PAUSE stateback sentence
+- You referenced PAUSE conceptually ("the framework requires...") but didn't write the sentence
 - You skipped PAUSE because the task "seemed straightforward"
 - You skipped PAUSE because context was missing (missing context is exactly when PAUSE matters most)
 - You treated a missing file or incomplete information as a reason to bypass the framework
 - Your Purpose describes a process ("refactor", "add", "fix") instead of a result
 - You're three steps into implementation and can't state who the audience is
 
-**All of these mean: pause, output the five fields, then continue.**
+**All of these mean: pause, output the stateback sentence, then continue.**
 
 ## Common Rationalizations
 
@@ -178,15 +175,15 @@ Run PAUSE first, then SUCCESS for the completion contract.
 | "The user was very specific" | Specific instructions still have implicit audience and constraints. |
 | "I can't fill in Settings/Security" | Then you haven't thought about risk. That's the point. |
 | "Context is missing, so I'll skip PAUSE" | Missing context is the strongest signal TO run PAUSE — it surfaces what you need to ask. |
-| "I referenced the framework in my reasoning" | Referencing is not executing. Write out the five fields. |
-| "I internalized the principles" | Internalizing without outputting is skipping the discipline. Write the fields. |
+| "I referenced the framework in my reasoning" | Referencing is not executing. Write the stateback sentence. |
+| "I internalized the principles" | Internalizing without outputting is skipping the discipline. Write the stateback sentence. |
 
 ## Common Mistakes
 
 | Anti-pattern | Fix |
 |--------------|-----|
 | Bundling multiple deliverables in Purpose | One purpose, one artifact. Split if needed. |
-| Omitting a field | All five are mandatory — no exceptions. |
+| Omitting one part of the stateback | Purpose, audience, usage, settings/security, and exceptions are all mandatory. |
 | Listing 3+ exceptions without re-scoping | Stop and narrow the Purpose first. |
 | Writing Purpose as a process ("refactor X") | Rewrite as a result ("focused modules replacing X"). |
 | Treating PAUSE as optional for "simple" tasks | Activate for any artifact-producing task. |

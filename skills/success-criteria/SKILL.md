@@ -9,7 +9,7 @@ description: Use when starting any task, feature, bugfix, investigation, or refa
 
 **Define "done" before you start.** Every task needs a concrete end state, observable criteria, and evidence plan BEFORE the first action. SUCCESS is a pre-execution checkpoint that prevents wasted work, scope drift, and unauditable results.
 
-**Core principle:** If you can't state what success looks like, you can't recognize it when you get there.
+**Core principle:** If you can't state the end state, utility, criteria, checkpoints, evidence, simplicity constraint, and scope boundary in one cohesive sentence, you can't recognize success when you get there.
 
 ## When to Use
 
@@ -35,9 +35,9 @@ digraph when_to_use {
 
 ## The SUCCESS Framework
 
-Run these seven steps BEFORE your first implementation action. Output them explicitly — they are the contract for the work.
+Run these seven steps BEFORE your first implementation action, then output them as one complete stateback sentence — that sentence is the contract for the work.
 
-**This is not optional.** You must write out each step with its header (S, U, C, C, E, S, S) and your answer before taking any action. Absorbing the principles without outputting the steps is a violation — the explicit output IS the discipline. An action plan without the SUCCESS contract above it is incomplete.
+**This is not optional.** You must write one complete stateback sentence before taking any action. The sentence must include the end state, utility, criteria, checkpoints, evidence, simplicity constraint, and scope boundary without spelling out the acronym as separate steps. Absorbing the principles without outputting the sentence is a violation — the explicit output IS the discipline. An action plan without the SUCCESS contract above it is incomplete.
 
 **Violating the letter of this rule is violating the spirit of the rule.**
 
@@ -128,21 +128,27 @@ Keep execution anchored to the goal throughout.
 
 **Baseline failure this prevents:** Agents make reasonable scope decisions reactively but don't proactively guard against drift during execution.
 
+## Output Format
+
+```text
+Stateback: This task is done when <valuable end state> delivers <user utility>, proven by <observable criteria>, checked at <validation checkpoints>, evidenced by <tests, records, or artifacts>, kept simple by <simplicity constraint>, and bounded to <explicit scope boundary>.
+```
+
 ## Quick Reference
 
 | Step | Question to Answer | Output |
 |------|-------------------|--------|
-| **S**eek success | What does "done" look like? | One-sentence end state |
-| **U**ncover utility | What outcome does the user need? | Purpose statement |
-| **C**hoose criteria | How will we prove success? | Observable, verifiable criteria |
-| **C**reate checkpoints | Where do we validate during execution? | Checkpoint list with gates |
-| **E**xpose evidence | How do we make the work auditable? | Evidence plan (logs, tests, records) |
-| **S**tay simple | What can we remove? | Simplicity constraint |
-| **S**ustain scope | How do we prevent drift? | Scope guard with explicit boundaries |
+| Seek success | What does "done" look like? | Included in the stateback sentence |
+| Uncover utility | What outcome does the user need? | Included in the stateback sentence |
+| Choose criteria | How will we prove success? | Included in the stateback sentence |
+| Create checkpoints | Where do we validate during execution? | Included in the stateback sentence |
+| Expose evidence | How do we make the work auditable? | Included in the stateback sentence |
+| Stay simple | What can we remove? | Included in the stateback sentence |
+| Sustain scope | How do we prevent drift? | Included in the stateback sentence |
 
 ## The Rule
 
-**Before acting, output all seven steps explicitly.** This is the contract for the work. If you can't fill in a step, that's a signal you need more information — ask the user or state an assumption.
+**Before acting, output one complete stateback sentence that includes all seven SUCCESS parts.** This is the contract for the work. If you can't include one part, that's a signal you need more information — ask the user or state an assumption.
 
 Prevent avoidable errors first. Detect and mitigate remaining risks. Ask only follow-ups that would materially change the result. Otherwise, state assumptions and proceed.
 
@@ -156,9 +162,9 @@ Prevent avoidable errors first. Detect and mitigate remaining risks. Ask only fo
 - You're optimizing something you haven't measured
 - You can't explain how someone else would verify your work
 - You're writing `console.log` / `print()` instead of structured logs
-- You absorbed the principles but didn't write out the S-U-C-C-E-S-S headers
+- You absorbed the principles but didn't write the stateback sentence
 
-**All of these mean: pause, run SUCCESS from the top, then continue.**
+**All of these mean: pause, write the stateback sentence, then continue.**
 
 ## Common Rationalizations
 
@@ -171,8 +177,8 @@ Prevent avoidable errors first. Detect and mitigate remaining risks. Ask only fo
 | "Adding logging slows me down" | Debugging without logs slows you down more. Build it in from the start. |
 | "I'll document it at the end" | You won't. And if you do, you'll forget what you tried and why. |
 | "Scope is obvious here" | Scope is never obvious. State the boundary. 10 seconds. |
-| "I internalized the principles" | Internalizing without outputting is skipping the discipline. Write out the steps. |
-| "The action plan covers it" | An action plan is not a SUCCESS contract. Output the seven steps, then the plan. |
+| "I internalized the principles" | Internalizing without outputting is skipping the discipline. Write the stateback sentence. |
+| "The action plan covers it" | An action plan is not a SUCCESS contract. Output the stateback sentence, then the plan. |
 | "Investigation tasks don't need this" | Investigations especially need criteria — otherwise you'll explore forever. |
 
 ## Structured Logging Note
