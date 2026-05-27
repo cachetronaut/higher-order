@@ -94,7 +94,7 @@ Bad:
 
 ```json
 {
-  "source": "/Users/example/Developer/safe-install"
+  "source": "<absolute-local-path>/safe-install"
 }
 ```
 
