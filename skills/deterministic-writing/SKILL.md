@@ -27,9 +27,32 @@ Write so that a developer, non-native English speaker, or automated system can i
 | **Imperative for actions** | Write "do X," not "could you do X" |
 | **Conclusion first** | Lead comments and messages with the answer, not the context |
 | **Diagram wins on conflict** | If the diagram and text disagree, fix the text |
+| **Natural statebacks** | Convert framework checks into plain sentences instead of acronym headers or labeled fields |
 
 For the full 10-step document structure, see `references/steps.md`.  
 For filler words to avoid and common mistakes, see `references/reference.md`.
+
+## Natural Stateback Contract
+
+When another skill requires an explicit stateback, write the result as one or two natural paragraphs. Do not expose framework mnemonics, repeated labels, or checklist headings unless the user asks to inspect the framework.
+
+Use this shape:
+
+```text
+This is done when <end state>, so <user value>, with success proven by <observable evidence> and bounded to <scope>.
+
+I will <first checkpoint>, then <implementation or analysis step>, then <validation step>, using <evidence source> as the audit trail and avoiding <out-of-scope work>.
+```
+
+Avoid this shape:
+
+```text
+S - Seek success: ...
+U - Uncover utility: ...
+C - Choose criteria: ...
+```
+
+The internal reasoning can still use structured prompts and mnemonic checks. The user-facing output should read like a concise work contract.
 
 ## Relationship to Other Skills
 
@@ -43,6 +66,7 @@ PAUSE answers *what are we writing and for whom?* SUCCESS answers *how do we kno
 ## Quality Checklist
 
 - [ ] `pause-framework` was executed first
+- [ ] Required statebacks are written as natural sentences, not acronym expansions
 - [ ] A developer can implement this without asking a question
 - [ ] Every "if" has an "else"
 - [ ] All field names, column names, and values are exact and in backticks

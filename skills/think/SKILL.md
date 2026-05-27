@@ -11,7 +11,7 @@ THINK is a deterministic option-narrowing loop for agent reasoning. The agent mu
 
 Core principle: do not "think harder" in one pass; write the decision state down, score against explicit constraints, cut the candidate set by half, and loop until one option remains.
 
-THINK stands for:
+The internal loop is:
 
 - **T - Take a beat to reflect on the goal.** Write the goal out in one sentence before generating options.
 - **H - Hash out the constraints.** Write each constraint out so it can be compared against the goal.
@@ -136,14 +136,12 @@ The script owns deterministic iteration, candidate IDs, stable sorting, top-half
 
 ## Output Format to User
 
-When THINK completes, respond with:
+When THINK completes, compile the result through `deterministic-writing` into a concise natural answer. Do not expose the acronym, score table, or field labels unless the user asks to inspect the decision record.
 
 ```text
-Goal: <one sentence>
-Constraints used: <brief summary>
-Winner: <candidate id and sentence>
-Why it won: <short rationale>
-Eliminated: <brief list of strongest rejected options and why>
+I chose <winning option> because it best satisfies <key constraints> while avoiding <main risk or tradeoff>.
+
+The strongest rejected alternatives were <alternative> and <alternative>; they lost because <brief reason>.
 ```
 
 Keep internal scoring tables out of the final answer unless the user asks to inspect them.
@@ -172,7 +170,7 @@ Right: keep `ceil(N/2)` every round.
 
 Wrong: silently refine in the model's context.
 
-Right: use `think.sh`, write iteration notes, and include "Looping back to refine the list."
+Right: use `think.sh` and write iteration notes for the audit trail, then summarize the decision naturally for the user.
 
 ### Treating THINK as brainstorming only
 

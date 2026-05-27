@@ -40,11 +40,11 @@ digraph when_to_use {
 
 ## The PAUSE Framework
 
-**This is not optional.** You must write one complete stateback sentence before taking any action. The sentence must include purpose, audience, usage context, settings/security, and exceptions without spelling out the acronym as separate fields. Absorbing the principles without outputting the sentence is a violation — the explicit output IS the discipline.
+**This is not optional.** You must write one concise natural stateback before taking any action. The sentence must include purpose, audience, usage context, settings/security, and exceptions without spelling out the acronym as separate fields. Absorbing the principles without outputting the sentence is a violation.
 
 **Violating the letter of this rule is violating the spirit of the rule.**
 
-Run these five steps BEFORE your first implementation action, then output them as one fluid sentence — that sentence is the contract for the work.
+Answer these five checks BEFORE your first implementation action, then compile them into one fluid sentence — that sentence is the contract for the work.
 
 ### P — Purpose
 
@@ -97,14 +97,16 @@ State conditions where the default approach would fail or need modification. Lim
 
 ## Output Format
 
+Use the natural stateback style from `deterministic-writing`. Do not prefix the sentence with `Stateback:` in normal conversation.
+
 ```text
-Stateback: I will produce <concrete deliverable> for <audience and context>, intended for <usage lifecycle>, within <settings, security, or operational constraints>, while accounting for <one or two critical exceptions>.
+I will produce <concrete deliverable> for <audience and context>, intended for <usage lifecycle>, within <settings, security, or operational constraints>, while accounting for <one or two critical exceptions>.
 ```
 
 ## Execution Gate
 
 Execution is ONLY allowed when:
-- One complete PAUSE stateback sentence is explicitly written out
+- One complete natural stateback sentence is explicitly written out
 - The sentence covers purpose, audience, usage, settings/security, and exceptions
 - The sentence contains no unknowns or unresolved assumptions
 - Purpose describes a result, not a process
@@ -138,11 +140,11 @@ This is not busywork — a broad purpose with many exceptions is a sign you're b
 
 | Field | Question to Answer | Output |
 |-------|-------------------|--------|
-| Purpose | What concrete result will be produced? | Included in the stateback sentence |
-| Audience | Who consumes this and what do they know? | Included in the stateback sentence |
-| Usage | How long does this live and how often is it used? | Included in the stateback sentence |
-| Settings/Security | What constraints, risks, or boundaries apply? | Included in the stateback sentence |
-| Exceptions | Where does the default approach break? | <= 2 critical edge cases included in the stateback sentence |
+| Purpose | What concrete result will be produced? | Fold into the natural stateback |
+| Audience | Who consumes this and what do they know? | Fold into the natural stateback |
+| Usage | How long does this live and how often is it used? | Fold into the natural stateback |
+| Settings/Security | What constraints, risks, or boundaries apply? | Fold into the natural stateback |
+| Exceptions | Where does the default approach break? | Fold <= 2 critical edge cases into the natural stateback |
 
 ## Relationship to Other Skills
 
@@ -155,7 +157,7 @@ Run PAUSE first, then SUCCESS for the completion contract.
 
 ## Red Flags — STOP and Rerun PAUSE
 
-- You started writing code without outputting the PAUSE stateback sentence
+- You started writing code without outputting the natural stateback sentence
 - You referenced PAUSE conceptually ("the framework requires...") but didn't write the sentence
 - You skipped PAUSE because the task "seemed straightforward"
 - You skipped PAUSE because context was missing (missing context is exactly when PAUSE matters most)
@@ -163,7 +165,7 @@ Run PAUSE first, then SUCCESS for the completion contract.
 - Your Purpose describes a process ("refactor", "add", "fix") instead of a result
 - You're three steps into implementation and can't state who the audience is
 
-**All of these mean: pause, output the stateback sentence, then continue.**
+**All of these mean: pause, output the natural stateback sentence, then continue.**
 
 ## Common Rationalizations
 
@@ -175,8 +177,8 @@ Run PAUSE first, then SUCCESS for the completion contract.
 | "The user was very specific" | Specific instructions still have implicit audience and constraints. |
 | "I can't fill in Settings/Security" | Then you haven't thought about risk. That's the point. |
 | "Context is missing, so I'll skip PAUSE" | Missing context is the strongest signal TO run PAUSE — it surfaces what you need to ask. |
-| "I referenced the framework in my reasoning" | Referencing is not executing. Write the stateback sentence. |
-| "I internalized the principles" | Internalizing without outputting is skipping the discipline. Write the stateback sentence. |
+| "I referenced the framework in my reasoning" | Referencing is not executing. Write the natural stateback sentence. |
+| "I internalized the principles" | Internalizing without outputting is skipping the discipline. Write the natural stateback sentence. |
 
 ## Common Mistakes
 

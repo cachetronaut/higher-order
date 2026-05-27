@@ -35,9 +35,9 @@ digraph when_to_use {
 
 ## The SUCCESS Framework
 
-Run these seven steps BEFORE your first implementation action, then output them as one complete stateback sentence — that sentence is the contract for the work.
+Answer the seven checks BEFORE your first implementation action, then compile them into one or two natural sentences. The result is the contract for the work.
 
-**This is not optional.** You must write one complete stateback sentence before taking any action. The sentence must include the end state, utility, criteria, checkpoints, evidence, simplicity constraint, and scope boundary without spelling out the acronym as separate steps. Absorbing the principles without outputting the sentence is a violation — the explicit output IS the discipline. An action plan without the SUCCESS contract above it is incomplete.
+**This is not optional.** You must write a concise natural-language contract before taking any action. It must include the end state, utility, criteria, checkpoints, evidence, simplicity constraint, and scope boundary without spelling out the acronym as separate steps. Absorbing the principles without outputting the contract is a violation. An action plan without the contract above it is incomplete.
 
 **Violating the letter of this rule is violating the spirit of the rule.**
 
@@ -130,31 +130,35 @@ Keep execution anchored to the goal throughout.
 
 ## Output Format
 
+Use the natural stateback style from `deterministic-writing`. Prefer one paragraph when the task is small and two short paragraphs when a checkpoint plan helps.
+
 ```text
-Stateback: This task is done when <valuable end state> delivers <user utility>, proven by <observable criteria>, checked at <validation checkpoints>, evidenced by <tests, records, or artifacts>, kept simple by <simplicity constraint>, and bounded to <explicit scope boundary>.
+This is done when <valuable end state>, so <user utility>, with success proven by <observable criteria>, checked at <validation checkpoints>, and evidenced by <tests, records, or artifacts>.
+
+I will keep this bounded to <explicit scope boundary>, avoid <out-of-scope work>, and use <simplicity constraint> to keep the work small.
 ```
 
 ## Quick Reference
 
 | Step | Question to Answer | Output |
 |------|-------------------|--------|
-| Seek success | What does "done" look like? | Included in the stateback sentence |
-| Uncover utility | What outcome does the user need? | Included in the stateback sentence |
-| Choose criteria | How will we prove success? | Included in the stateback sentence |
-| Create checkpoints | Where do we validate during execution? | Included in the stateback sentence |
-| Expose evidence | How do we make the work auditable? | Included in the stateback sentence |
-| Stay simple | What can we remove? | Included in the stateback sentence |
-| Sustain scope | How do we prevent drift? | Included in the stateback sentence |
+| Seek success | What does "done" look like? | Fold into the natural contract |
+| Uncover utility | What outcome does the user need? | Fold into the natural contract |
+| Choose criteria | How will we prove success? | Fold into the natural contract |
+| Create checkpoints | Where do we validate during execution? | Fold into the natural contract |
+| Expose evidence | How do we make the work auditable? | Fold into the natural contract |
+| Stay simple | What can we remove? | Fold into the natural contract |
+| Sustain scope | How do we prevent drift? | Fold into the natural contract |
 
 ## The Rule
 
-**Before acting, output one complete stateback sentence that includes all seven SUCCESS parts.** This is the contract for the work. If you can't include one part, that's a signal you need more information — ask the user or state an assumption.
+**Before acting, output a natural-language contract that includes all seven SUCCESS parts.** This is the contract for the work. If you can't include one part, that's a signal you need more information — ask the user or state an assumption.
 
 Prevent avoidable errors first. Detect and mitigate remaining risks. Ask only follow-ups that would materially change the result. Otherwise, state assumptions and proceed.
 
 ## Red Flags — STOP and Rerun SUCCESS
 
-- You wrote an action plan without outputting the seven SUCCESS steps first
+- You wrote an action plan without outputting the natural success contract first
 - You're three actions in and haven't stated what "done" looks like
 - You defined criteria AFTER building the solution
 - Your evidence plan is "I'll document it at the end"
@@ -162,9 +166,9 @@ Prevent avoidable errors first. Detect and mitigate remaining risks. Ask only fo
 - You're optimizing something you haven't measured
 - You can't explain how someone else would verify your work
 - You're writing `console.log` / `print()` instead of structured logs
-- You absorbed the principles but didn't write the stateback sentence
+- You absorbed the principles but didn't write the natural contract
 
-**All of these mean: pause, write the stateback sentence, then continue.**
+**All of these mean: pause, write the natural contract, then continue.**
 
 ## Common Rationalizations
 
@@ -177,8 +181,8 @@ Prevent avoidable errors first. Detect and mitigate remaining risks. Ask only fo
 | "Adding logging slows me down" | Debugging without logs slows you down more. Build it in from the start. |
 | "I'll document it at the end" | You won't. And if you do, you'll forget what you tried and why. |
 | "Scope is obvious here" | Scope is never obvious. State the boundary. 10 seconds. |
-| "I internalized the principles" | Internalizing without outputting is skipping the discipline. Write the stateback sentence. |
-| "The action plan covers it" | An action plan is not a SUCCESS contract. Output the stateback sentence, then the plan. |
+| "I internalized the principles" | Internalizing without outputting is skipping the discipline. Write the natural contract. |
+| "The action plan covers it" | An action plan is not a SUCCESS contract. Output the natural contract, then the plan. |
 | "Investigation tasks don't need this" | Investigations especially need criteria — otherwise you'll explore forever. |
 
 ## Structured Logging Note
