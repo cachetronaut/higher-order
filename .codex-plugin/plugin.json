@@ -1,7 +1,7 @@
 {
   "name": "higher-order",
   "version": "0.1.0",
-  "description": "Higher-order reasoning, decision, planning, design, and writing skills for Codex.",
+  "description": "Reusable skills for higher-order agent work, integrated taste, and better judgment.",
   "author": {
     "name": "Higher Order"
   },
@@ -9,6 +9,8 @@
   "keywords": [
     "skills",
     "reasoning",
+    "taste",
+    "judgment",
     "planning",
     "design",
     "architecture",
@@ -17,8 +19,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Higher Order",
-    "shortDescription": "Reasoning guardrails for stronger agent work.",
-    "longDescription": "Higher Order packages reusable Codex skills for scoping work, defining success, narrowing decisions, writing deterministic implementation guidance, structuring projects, and reviewing UI design without adding runtime command enforcement.",
+    "shortDescription": "Reusable skills for higher-order agent work and integrated taste.",
+    "longDescription": "Higher Order packages reusable Codex skills for better agent work: scoping the real problem, defining success, narrowing decisions, writing implementation-ready guidance, structuring projects, reviewing UI, and applying integrated taste so outputs fit the user's intent instead of merely satisfying a checklist.",
     "developerName": "Higher Order",
     "category": "Productivity",
     "capabilities": [
@@ -27,9 +29,9 @@
       "Reference"
     ],
     "defaultPrompt": [
-      "Define success before implementing this change.",
-      "Draft a deterministic implementation plan.",
-      "Think through these options with explicit constraints."
+      "Use Higher Order to turn this idea into the smallest useful implementation plan.",
+      "Review this proposal for taste: what feels overbuilt, under-specified, or wrong for the user?",
+      "Define success before implementing this change, then keep the plan small."
     ],
     "brandColor": "#2F6F5E"
   }
