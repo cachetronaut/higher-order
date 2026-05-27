@@ -1,7 +1,7 @@
 {
   "name": "higher-order",
   "version": "0.1.0",
-  "description": "Reusable skills for higher-order agent work, integrated taste, and better judgment.",
+  "description": "Reusable skills that help agents clarify prompts, show useful working state, and connect product taste with implementation structure.",
   "author": {
     "name": "Higher Order"
   },
@@ -9,8 +9,8 @@
   "keywords": [
     "skills",
     "reasoning",
-    "taste",
-    "judgment",
+    "prompting",
+    "clarification",
     "planning",
     "design",
     "architecture",
@@ -19,8 +19,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Higher Order",
-    "shortDescription": "Reusable skills for higher-order agent work and integrated taste.",
-    "longDescription": "Higher Order packages reusable Codex skills for better agent work: scoping the real problem, defining success, narrowing decisions, writing implementation-ready guidance, structuring projects, reviewing UI, and applying integrated taste so outputs fit the user's intent instead of merely satisfying a checklist.",
+    "shortDescription": "Skills for prompt probing, visible agent work, UI design, and project architecture.",
+    "longDescription": "Higher Order packages reusable Codex skills for better agent work: probing vague prompts, making assumptions and rationale visible, defining success, narrowing decisions, writing implementation-ready guidance, and connecting UI design taste with project architecture taste so users can steer before the model builds the wrong thing.",
     "developerName": "Higher Order",
     "category": "Productivity",
     "capabilities": [
@@ -29,9 +29,9 @@
       "Reference"
     ],
     "defaultPrompt": [
-      "Use Higher Order to turn this idea into the smallest useful implementation plan.",
-      "Review this proposal for taste: what feels overbuilt, under-specified, or wrong for the user?",
-      "Define success before implementing this change, then keep the plan small."
+      "Probe this app idea before implementing. Ask only the questions that would change the build.",
+      "Restate what you think I want, name your assumptions, then propose the smallest useful first version.",
+      "Before coding, define what production-ready means for this project and what you are intentionally not building."
     ],
     "brandColor": "#2F6F5E"
   }
