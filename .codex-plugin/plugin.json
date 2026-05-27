@@ -1,7 +1,7 @@
 {
   "name": "higher-order",
   "version": "0.1.0",
-  "description": "Higher-order reasoning, decision, planning, design, and writing skills for Codex.",
+  "description": "Reusable skills that help agents clarify prompts, show useful working state, and connect product taste with implementation structure.",
   "author": {
     "name": "Higher Order"
   },
@@ -9,6 +9,8 @@
   "keywords": [
     "skills",
     "reasoning",
+    "prompting",
+    "clarification",
     "planning",
     "design",
     "architecture",
@@ -17,8 +19,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Higher Order",
-    "shortDescription": "Reasoning guardrails for stronger agent work.",
-    "longDescription": "Higher Order packages reusable Codex skills for scoping work, defining success, narrowing decisions, writing deterministic implementation guidance, structuring projects, and reviewing UI design without adding runtime command enforcement.",
+    "shortDescription": "Skills for prompt probing, visible agent work, UI design, and project architecture.",
+    "longDescription": "Higher Order packages reusable Codex skills for better agent work: probing vague prompts, making assumptions and rationale visible, defining success, narrowing decisions, writing implementation-ready guidance, and connecting UI design taste with project architecture taste so users can steer before the model builds the wrong thing.",
     "developerName": "Higher Order",
     "category": "Productivity",
     "capabilities": [
@@ -27,9 +29,9 @@
       "Reference"
     ],
     "defaultPrompt": [
-      "Define success before implementing this change.",
-      "Draft a deterministic implementation plan.",
-      "Think through these options with explicit constraints."
+      "Probe this app idea before implementing. Ask only the questions that would change the build.",
+      "Restate what you think I want, name your assumptions, then propose the smallest useful first version.",
+      "Before coding, define what production-ready means for this project and what you are intentionally not building."
     ],
     "brandColor": "#2F6F5E"
   }
