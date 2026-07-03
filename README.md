@@ -100,6 +100,8 @@ Here is what I want, why it matters, who it is for, what constraints are real, a
 
 ## Install
 
+### Codex
+
 Add this repository as a local Codex marketplace:
 
 ```bash
@@ -108,18 +110,39 @@ codex plugin marketplace add /path/to/higher-order
 
 Then start a new Codex thread so the updated skill list is loaded.
 
+### Claude Code
+
+Add this repository as a local Claude Code marketplace, then install the plugin from it:
+
+```bash
+claude plugin marketplace add /path/to/higher-order
+claude plugin install higher-order@higher-order
+```
+
+Restart Claude Code, or run `/reload-plugins` in an existing session. Claude exposes the packaged skills under the plugin namespace, for example `/higher-order:success-criteria`.
+
 ## Plugin layout
 
 ```text
 .codex-plugin/plugin.json
 .agents/plugins/marketplace.json
+.claude-plugin/plugin.json
+.claude-plugin/marketplace.json
 skills/
 reference/
 ```
 
 Codex reads the plugin manifest from `.codex-plugin/plugin.json` and the skill entries from `skills/<skill-name>/SKILL.md`.
+Claude Code reads the plugin manifest from `.claude-plugin/plugin.json`, the marketplace catalog from `.claude-plugin/marketplace.json`, and the same skill entries from `skills/<skill-name>/SKILL.md`.
 
 ## Validate
+
+Run the Claude Code plugin validator:
+
+```bash
+claude plugin validate /path/to/higher-order
+claude plugin validate /path/to/higher-order --strict
+```
 
 Run the plugin validator from the Codex plugin-creator skill:
 

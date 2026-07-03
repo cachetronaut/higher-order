@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-marketplace.json",
+  "name": "higher-order",
+  "owner": {
+    "name": "Higher Order"
+  },
+  "description": "Marketplace for the Higher Order Claude Code plugin.",
+  "plugins": [
+    {
+      "name": "higher-order",
+      "source": "./",
+      "displayName": "Higher Order",
+      "description": "Reusable skills that help agents clarify prompts, show useful working state, and connect product taste with implementation structure.",
+      "author": {
+        "name": "Higher Order"
+      },
+      "license": "UNLICENSED",
+      "category": "productivity",
+      "tags": [
+        "skills",
+        "reasoning",
+        "prompting",
+        "planning",
+        "design",
+        "architecture",
+        "writing"
+      ]
+    }
+  ]
+}

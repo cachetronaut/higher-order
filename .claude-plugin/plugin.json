@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "higher-order",
+  "displayName": "Higher Order",
+  "version": "0.1.0",
+  "description": "Reusable skills that help agents clarify prompts, show useful working state, and connect product taste with implementation structure.",
+  "author": {
+    "name": "Higher Order"
+  },
+  "license": "UNLICENSED",
+  "keywords": [
+    "skills",
+    "reasoning",
+    "prompting",
+    "clarification",
+    "planning",
+    "design",
+    "architecture",
+    "writing"
+  ],
+  "skills": "./skills/"
+}
