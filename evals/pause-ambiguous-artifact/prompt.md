@@ -1,0 +1,1 @@
+Create a reusable incident handoff template for our team. I have not specified who completes it, who reads it, or whether it is for routine incidents or major outages. Before drafting it, tell me what assignment you are taking on.

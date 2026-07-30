@@ -1,7 +1,7 @@
 {
   "name": "higher-order",
-  "version": "0.1.0",
-  "description": "Reusable skills that help agents clarify prompts, show useful working state, and connect product taste with implementation structure.",
+  "version": "0.2.0",
+  "description": "Selective skills for clarifying consequential work, defining completion, comparing options, and connecting product taste with implementation structure.",
   "author": {
     "name": "Higher Order"
   },
@@ -19,8 +19,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Higher Order",
-    "shortDescription": "Skills for prompt probing, visible agent work, UI design, and project architecture.",
-    "longDescription": "Higher Order packages reusable Codex skills for better agent work: probing vague prompts, making assumptions and rationale visible, defining success, narrowing decisions, writing implementation-ready guidance, and connecting UI design taste with project architecture taste so users can steer before the model builds the wrong thing.",
+    "shortDescription": "Selective skills for clearer assignments, decisions, plans, designs, and architecture.",
+    "longDescription": "Higher Order packages reusable Codex skills for better agent work: probing vague prompts, clarifying consequential assignments, defining completion when it is missing, comparing meaningful alternatives, writing implementation-ready guidance, and connecting UI design taste with project architecture taste so users can steer before the model builds the wrong thing.",
     "developerName": "Higher Order",
     "category": "Productivity",
     "capabilities": [

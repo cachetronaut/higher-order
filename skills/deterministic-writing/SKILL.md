@@ -9,12 +9,7 @@ description: Use when writing specifications, change requests, ticket comments, 
 
 Write so that a developer, non-native English speaker, or automated system can implement every sentence without asking a question. Ambiguity is a defect.
 
-**Precondition:** Run `pause-framework` first. PAUSE scopes what must be said:
-- Purpose → the smallest outcome the document must produce
-- Audience → who reads it and what they do not know
-- Usage → whether this is a one-time ticket, a recurring spec, or a stakeholder summary
-- Settings/Security → invariants, permissions, and naming conventions that must appear
-- Exceptions → branches, failure paths, and descoped items that must be stated explicitly
+Before writing, use `pause-framework` only when material ambiguity about the document's purpose, audience, use, constraints, or exceptions could change its content. Use `success-criteria` only when completion or verification is unclear. Neither skill is a mandatory precondition.
 
 ## Core Principles
 
@@ -27,46 +22,44 @@ Write so that a developer, non-native English speaker, or automated system can i
 | **Imperative for actions** | Write "do X," not "could you do X" |
 | **Conclusion first** | Lead comments and messages with the answer, not the context |
 | **Diagram wins on conflict** | If the diagram and text disagree, fix the text |
-| **Natural statebacks** | Convert framework checks into plain sentences instead of acronym headers or labeled fields |
+| **Natural agreements** | Convert framework checks into plain sentences instead of acronym headers or labeled fields |
 
 For the full 10-step document structure, see `references/steps.md`.  
 For filler words to avoid and common mistakes, see `references/reference.md`.
 
-## Natural Stateback Contract
+## Natural Working Agreements
 
-When another skill requires an explicit stateback, write the result as one or two natural paragraphs. Do not expose framework mnemonics, repeated labels, or checklist headings unless the user asks to inspect the framework.
+When another skill calls for a visible working agreement, write it as one natural paragraph. Do not expose framework mnemonics, repeated labels, or checklist headings unless the user asks to inspect the framework.
 
 Use this shape:
 
 ```text
-This is done when <end state>, so <user value>, with success proven by <observable evidence> and bounded to <scope>.
-
-I will <first checkpoint>, then <implementation or analysis step>, then <validation step>, using <evidence source> as the audit trail and avoiding <out-of-scope work>.
+I’ll produce <result> for <audience or consumer> within <material constraints>. This is complete when <end state>, demonstrated by <observable evidence>, and I’ll keep the work bounded to <scope>.
 ```
 
 Avoid this shape:
 
 ```text
-S - Seek success: ...
-U - Uncover utility: ...
-C - Choose criteria: ...
+Purpose: ...
+Audience: ...
+Success criteria: ...
 ```
 
-The internal reasoning can still use structured prompts and mnemonic checks. The user-facing output should read like a concise work contract.
+The user-facing output should read like a concise working agreement, not evidence that a framework ran.
 
 ## Relationship to Other Skills
 
-**PAUSE → SUCCESS → Deterministic Writing** — a pipeline, not alternatives.
+These skills are independent and may be combined when their own descriptions match.
 
-- **pause-framework** — Run first. PAUSE scopes the document: what to say, for whom, under what constraints. Deterministic writing cannot begin without a scoped purpose and audience.
-- **success-criteria** — Run after PAUSE. SUCCESS defines how you'll know the document is done and how to verify it. The quality checklist below covers writing quality; SUCCESS covers task completion.
+- **pause-framework** clarifies what is being written, for whom, and under which material constraints when those facts are ambiguous.
+- **success-criteria** defines completion and verification when they are missing.
+- **deterministic-writing** expresses the resulting specification so its reader can act without guessing.
 
-PAUSE answers *what are we writing and for whom?* SUCCESS answers *how do we know it's done?* This skill answers *how do we write it so the reader never has to ask a question?*
+When both related skills apply, produce one natural working-agreement paragraph. When neither applies, write the requested specification directly.
 
 ## Quality Checklist
 
-- [ ] `pause-framework` was executed first
-- [ ] Required statebacks are written as natural sentences, not acronym expansions
+- [ ] Any required working agreement is written naturally rather than as framework fields
 - [ ] A developer can implement this without asking a question
 - [ ] Every "if" has an "else"
 - [ ] All field names, column names, and values are exact and in backticks

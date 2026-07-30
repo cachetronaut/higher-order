@@ -10,7 +10,7 @@
       "name": "higher-order",
       "source": "./",
       "displayName": "Higher Order",
-      "description": "Reusable skills that help agents clarify prompts, show useful working state, and connect product taste with implementation structure.",
+      "description": "Selective skills for clarifying consequential work, defining completion, comparing options, and connecting product taste with implementation structure.",
       "author": {
         "name": "Higher Order"
       },

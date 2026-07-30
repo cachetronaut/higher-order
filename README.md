@@ -63,10 +63,10 @@ Taste is not decoration. It is the fit between what the user wants to build, how
 
 - `prompt-probing` turns vague or overloaded requests into targeted questions, assumptions, and safe next steps.
 - `visible-work` makes the agent's interpretation, assumptions, rationale, and checkpoints visible to the user.
-- `pause-framework` scopes artifact-producing work before execution.
-- `success-criteria` defines done, verification, evidence, and scope boundaries.
+- `pause-framework` clarifies consequential artifacts when material ambiguity could change the result.
+- `success-criteria` defines completion and verification when non-trivial work lacks clear acceptance criteria.
 - `deterministic-writing` turns plans, specs, and change requests into unambiguous implementation text.
-- `think` narrows options with a deterministic score-and-prune workflow.
+- `decision-analysis` compares credible options when competing constraints make the choice consequential.
 - `project-architecture` guides repo, package, and service layout decisions.
 - `ui-design` provides a compact checklist for UI specs and design reviews.
 
@@ -102,24 +102,27 @@ Here is what I want, why it matters, who it is for, what constraints are real, a
 
 ### Codex
 
-Add this repository as a local Codex marketplace:
+Add the GitHub repository as a Codex marketplace:
 
 ```bash
-codex plugin marketplace add /path/to/higher-order
+codex plugin marketplace add cachetronaut/higher-order --ref main
+codex plugin add higher-order@higher-order
 ```
 
 Then start a new Codex thread so the updated skill list is loaded.
 
 ### Claude Code
 
-Add this repository as a local Claude Code marketplace, then install the plugin from it:
+Add the GitHub repository as a Claude Code marketplace, then install the plugin from it:
 
 ```bash
-claude plugin marketplace add /path/to/higher-order
+claude plugin marketplace add cachetronaut/higher-order
 claude plugin install higher-order@higher-order
 ```
 
 Restart Claude Code, or run `/reload-plugins` in an existing session. Claude exposes the packaged skills under the plugin namespace, for example `/higher-order:success-criteria`.
+
+For local plugin development, replace `cachetronaut/higher-order` with the path to your checkout.
 
 ## Plugin layout
 

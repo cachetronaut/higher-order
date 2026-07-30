@@ -1,211 +1,54 @@
 ---
 name: success-criteria
-description: Use when starting any task, feature, bugfix, investigation, or refactor — before writing code, running commands, or making decisions. Triggers on vague requests ("make it faster", "add search", "fix this"), unclear scope, missing acceptance criteria, or when you're about to act without defining what "done" means.
+description: Define observable completion, validation, and scope for non-trivial implementation, investigation, refactoring, migration, or performance work when clear acceptance criteria or evidence have not been provided. Do not use for factual answers, status reports, routine commits or pushes, mechanical edits, single-command tasks, or work with explicit completion and verification requirements.
 ---
 
-# SUCCESS — Define Measurable Success Before Execution
+# Define Done Before Acting
 
-## Overview
+## Purpose
 
-**Define "done" before you start.** Every task needs a concrete end state, observable criteria, and evidence plan BEFORE the first action. SUCCESS is a pre-execution checkpoint that prevents wasted work, scope drift, and unauditable results.
+Use this skill when meaningful work could drift, end prematurely, or be declared complete without evidence because the desired outcome or its verification is unclear. It is not required for every action, and it must not restate acceptance criteria the user has already supplied.
 
-**Core principle:** If you can't state the end state, utility, criteria, checkpoints, evidence, simplicity constraint, and scope boundary in one cohesive sentence, you can't recognize success when you get there.
+## Form a completion contract
 
-## When to Use
+Identify the valuable end state, the observable evidence that would demonstrate it, the point where risk should be checked before proceeding, and the boundary that keeps the work from expanding. Use only the elements that matter for this task. Do not invent numerical targets, logging requirements, tests, or artifacts merely to fill a template.
 
-```dot
-digraph when_to_use {
-    "New task received" [shape=doublecircle];
-    "Can I state the end state in one sentence?" [shape=diamond];
-    "Do I have observable criteria?" [shape=diamond];
-    "Run SUCCESS" [shape=box];
-    "Proceed with execution" [shape=doublecircle];
+If a missing criterion could materially change the implementation or make completion impossible to judge, ask a focused question. Otherwise choose a reasonable, proportionate verification method from the repository’s existing practices and state the assumption only when the user would benefit from seeing it.
 
-    "New task received" -> "Can I state the end state in one sentence?";
-    "Can I state the end state in one sentence?" -> "Do I have observable criteria?" [label="yes"];
-    "Can I state the end state in one sentence?" -> "Run SUCCESS" [label="no"];
-    "Do I have observable criteria?" -> "Proceed with execution" [label="yes"];
-    "Do I have observable criteria?" -> "Run SUCCESS" [label="no"];
-}
-```
+For investigations, completion means producing enough evidence to answer or narrow the decision the investigation supports. It does not require finding a preferred answer, changing code, or exploring every possible cause.
 
-**Use for:** Any task where you're about to act — features, bugfixes, investigations, refactors, performance work, migrations.
+## Communicate naturally
 
-**Skip for:** Pure information questions ("what does this function do?"), single-command operations ("run the tests").
+Before substantive work, write one short paragraph that explains what completion means and how it will be demonstrated. Do not expose acronym expansions, framework labels, checklists, or the word `stateback`.
 
-## The SUCCESS Framework
-
-Answer the seven checks BEFORE your first implementation action, then compile them into one or two natural sentences. The result is the contract for the work.
-
-**This is not optional.** You must write a concise natural-language contract before taking any action. It must include the end state, utility, criteria, checkpoints, evidence, simplicity constraint, and scope boundary without spelling out the acronym as separate steps. Absorbing the principles without outputting the contract is a violation. An action plan without the contract above it is incomplete.
-
-**Violating the letter of this rule is violating the spirit of the rule.**
-
-### S — Seek Success
-
-Define "done" as one concrete, valuable end state.
-
-- State a single sentence: "This task is done when ___."
-- The end state must be valuable to the user, not just technically complete.
-- Ask the user ONLY when ambiguity could materially change the result. Otherwise, state your assumption and proceed.
-
-**Baseline failure this prevents:** Agents jump to implementation and define "done" retroactively, fitting criteria to what they already built.
-
-### U — Uncover Utility
-
-Identify the value, decision, or outcome the user actually needs.
-
-- Optimize for purpose over literal wording.
-- Challenge unclear goals: "make it faster" → faster for whom? which operations? what threshold matters?
-- A working feature that solves the wrong problem is a failure.
-
-**Baseline failure this prevents:** Agents accept vague requests at face value and start building before understanding what outcome the user needs.
-
-### C — Choose Criteria
-
-Select observable proof standards for success.
-
-- Use concrete signals: quality, speed, coverage, cost, risk, acceptance, absence of avoidable failure.
-- State criteria BEFORE acting, not after.
-- Criteria must be verifiable by someone other than you.
-
-**Example:** "p95 response time under 200ms on the 5 slowest endpoints" — not "the API feels faster."
-
-**Baseline failure this prevents:** Agents define acceptance criteria as an afterthought in Q&A, not as a prerequisite for execution.
-
-### C — Create Checkpoints
-
-Build validation into the process at known risk points.
-
-- Prefer this hierarchy for handling failure paths (poka-yoke):
-  1. **Eliminate** — remove the possibility of failure entirely (encode invariants in types, make illegal states unrepresentable)
-  2. **Prevent** — stop failure before it happens (validate at the boundary, replace optional flags with distinct operations)
-  3. **Replace/Simplify** — use a simpler approach with fewer failure modes
-  4. **Detect** — catch failure early with tests or checks
-  5. **Review/Recover** — last resort, manual inspection or rollback
-
-- Design the system so the wrong action cannot happen, or so it surfaces loudly the moment it does. Correctness shifts from discipline to structure.
-- Define at least one checkpoint between starting and claiming "done."
-- Consult `references/poka-yoke-signals.md` for common weak points to check against.
-
-**Baseline failure this prevents:** Agents execute a linear sequence of actions with no stop-and-reassess points.
-
-### E — Expose Evidence
-
-Make the result auditable and reusable from the start, not as an afterthought.
-
-- Plan your evidence trail BEFORE executing.
-- Use structured logs over print statements. Logs should capture: key decisions, inputs, outputs, errors, and state transitions.
-- Record: assumptions made, sources consulted, outputs produced, tests run, verification steps completed.
-- Evidence answers: what happened, why, and what changed.
-
-**Baseline failure this prevents:** Agents treat audit trails as a nice-to-have, adding `console.log` or markdown files reactively instead of building observability into the work.
-
-### S — Stay Simple
-
-Remove nonessential work, duplication, and fragile complexity (lean principle: every line of code is a liability until it earns its keep).
-
-- Make the correct path easy and the wrong path hard.
-- The smallest useful solution is sufficient.
-- If removing something doesn't break the success criteria, remove it.
-- Scope additions must justify themselves against the criteria, not against "it would be nice."
-- Defer abstraction until a second real use case appears.
-- Measure before optimizing; optimize only what measurement proves is hot.
-- Treat configuration, flags, and options as debt — add only with a named owner and a removal condition.
-- Before extracting shared code, confirm duplication is semantic (same domain concept), not coincidental (similar syntax, different intent). See the Rule of Two in `references/design-heuristics.md`.
-- Consult `references/lean-signals.md` for common waste patterns to eliminate.
-
-**Baseline failure this prevents:** Agents expand scope with good reasoning but no explicit gate — they justify additions post-hoc instead of testing them against predefined criteria.
-
-### S — Sustain Scope
-
-Keep execution anchored to the goal throughout.
-
-- Isolate changes — don't let "while I'm here" work creep in.
-- Flag drift explicitly: "This is outside the original scope because ___."
-- State tradeoffs when they arise, don't absorb them silently.
-- Return to the success criteria at every checkpoint.
-
-**Baseline failure this prevents:** Agents make reasonable scope decisions reactively but don't proactively guard against drift during execution.
-
-## Output Format
-
-Use the natural stateback style from `deterministic-writing`. Prefer one paragraph when the task is small and two short paragraphs when a checkpoint plan helps.
+Use this shape as guidance rather than a required form:
 
 ```text
-This is done when <valuable end state>, so <user utility>, with success proven by <observable criteria>, checked at <validation checkpoints>, and evidenced by <tests, records, or artifacts>.
-
-I will keep this bounded to <explicit scope boundary>, avoid <out-of-scope work>, and use <simplicity constraint> to keep the work small.
+This is complete when <valuable end state>, demonstrated by <observable evidence>. I’ll check <important risk point> before proceeding further, keep the work limited to <scope boundary>, and avoid <out-of-scope work>.
 ```
 
-## Quick Reference
+For example:
 
-| Step | Question to Answer | Output |
-|------|-------------------|--------|
-| Seek success | What does "done" look like? | Fold into the natural contract |
-| Uncover utility | What outcome does the user need? | Fold into the natural contract |
-| Choose criteria | How will we prove success? | Fold into the natural contract |
-| Create checkpoints | Where do we validate during execution? | Fold into the natural contract |
-| Expose evidence | How do we make the work auditable? | Fold into the natural contract |
-| Stay simple | What can we remove? | Fold into the natural contract |
-| Sustain scope | How do we prevent drift? | Fold into the natural contract |
+```text
+This is complete when the migration succeeds on representative data and rollback has been demonstrated. I’ll verify the transformation before production execution, preserve the validation results, and avoid unrelated schema cleanup.
+```
 
-## The Rule
+When the outcome, evidence, and scope are already explicit, do not add another contract. Proceed with the task and report the actual verification at the end.
 
-**Before acting, output a natural-language contract that includes all seven SUCCESS parts.** This is the contract for the work. If you can't include one part, that's a signal you need more information — ask the user or state an assumption.
+## Keep implementation policy separate
 
-Prevent avoidable errors first. Detect and mitigate remaining risks. Ask only follow-ups that would materially change the result. Otherwise, state assumptions and proceed.
+This skill defines completion; it does not prescribe programming languages, logging libraries, type systems, test frameworks, architecture patterns, or dependency tools. Follow the project’s instructions and any applicable specialist skill for those decisions.
 
-## Red Flags — STOP and Rerun SUCCESS
+Favor the smallest verification that gives confidence proportional to the risk. A documentation edit may need a focused content review, while a migration may need fixtures, rollback checks, and hosted validation. Evidence should match the work rather than becoming additional work of its own.
 
-- You wrote an action plan without outputting the natural success contract first
-- You're three actions in and haven't stated what "done" looks like
-- You defined criteria AFTER building the solution
-- Your evidence plan is "I'll document it at the end"
-- You added scope without checking it against the criteria
-- You're optimizing something you haven't measured
-- You can't explain how someone else would verify your work
-- You're writing `console.log` / `print()` instead of structured logs
-- You absorbed the principles but didn't write the natural contract
+When the task specifically calls for failure-proofing, scope reduction, or a design tradeoff, consult `references/poka-yoke-signals.md`, `references/lean-signals.md`, or `references/design-heuristics.md` as applicable. Do not load those references for routine completion planning.
 
-**All of these mean: pause, write the natural contract, then continue.**
+## Coordinate with related skills
 
-## Common Rationalizations
+If `pause-framework` also applies, combine the clarified assignment and completion contract into one natural paragraph. If the assignment is clear but completion is not, use this skill alone.
 
-| Excuse | Reality |
-|--------|---------|
-| "The task is too simple for this" | Simple tasks still need a definition of done. 30 seconds to state it. |
-| "I'll define criteria as I learn more" | You'll fit criteria to what you already built. Define first, refine at checkpoints. |
-| "The user said 'just make it work'" | That's when you MOST need criteria — "works" is not observable. |
-| "I know what they mean" | State your assumption explicitly. If you're right, it costs nothing. If you're wrong, it saves everything. |
-| "Adding logging slows me down" | Debugging without logs slows you down more. Build it in from the start. |
-| "I'll document it at the end" | You won't. And if you do, you'll forget what you tried and why. |
-| "Scope is obvious here" | Scope is never obvious. State the boundary. 10 seconds. |
-| "I internalized the principles" | Internalizing without outputting is skipping the discipline. Write the natural contract. |
-| "The action plan covers it" | An action plan is not a SUCCESS contract. Output the natural contract, then the plan. |
-| "Investigation tasks don't need this" | Investigations especially need criteria — otherwise you'll explore forever. |
+Use `visible-work` when the user needs intermediate checkpoints or a plan. Use `deterministic-writing` when a specification must be implementation-ready. Neither skill makes this completion contract mandatory.
 
-## Structured Logging Note
+## Exit conditions
 
-When the task involves code, prefer structured logging over print statements. Logs should capture key decisions, inputs, outputs, errors, and state transitions needed to debug without rerunning or re-explaining the work.
-
-Use type-safe patterns — type annotations, branded/newtypes, validated schemas at boundaries — even in dynamic languages. Use runtime assertions (`assert`) for internal invariants alongside tests.
-
-**References:**
-
-- `references/poka-yoke-signals.md` — Weak point signals and design rules for Create Checkpoints
-- `references/lean-signals.md` — Waste signals and core principles for Stay Simple
-- `references/design-heuristics.md` — DRY (semantic vs. coincidental duplication) and ETC (changeability test) for Stay Simple
-- `references/python.md` — `structlog`, type hints, Pydantic, `mypy --strict`
-- `references/javascript-typescript.md` — `pino`, branded types, `zod`, strict `tsconfig.json`
-- `references/rust.md` — `tracing`, newtypes, typestate, `assert!` vs `debug_assert!`
-
-## Common Mistakes
-
-**Defining success after execution.** The whole point is BEFORE. If you find yourself writing criteria that match what you already built, you're doing it backwards.
-
-**Asking too many questions.** SUCCESS says ask ONLY when ambiguity would materially change the result. If you can state a reasonable assumption, do that instead.
-
-**Skipping evidence planning.** "I'll add logging later" means you won't capture the decisions that matter most — the early ones.
-
-**Treating checkpoints as optional.** At least one checkpoint between start and "done." No linear runs.
+If this skill was loaded for a factual answer, status check, routine commit or push, mechanical edit, single command, or task with explicit acceptance criteria, exit it silently and perform the task normally.

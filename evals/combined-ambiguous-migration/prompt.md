@@ -1,0 +1,1 @@
+Build a reusable customer-data migration for production. The destination model is still evolving, rollback expectations are unclear, and I have not defined how we will prove the migration is safe. State your working agreement before implementation.

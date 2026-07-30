@@ -1,0 +1,1 @@
+Recommend PostgreSQL, DynamoDB, or SQLite for an offline-capable field application used by 40 technicians. It must sync when connectivity returns, remain operable for a full day without a network, and be maintainable by a two-person team. Explain the recommendation and the strongest alternative.
