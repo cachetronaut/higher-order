@@ -63,8 +63,8 @@ Taste is not decoration. It is the fit between what the user wants to build, how
 
 - `prompt-probing` turns vague or overloaded requests into targeted questions, assumptions, and safe next steps.
 - `visible-work` makes the agent's interpretation, assumptions, rationale, and checkpoints visible to the user.
-- `pause-framework` applies the full PAUSE scoping framework internally when material ambiguity could change an artifact, then communicates the result as natural prose.
-- `success-criteria` applies the full SUCCESS goal-setting framework internally when non-trivial work lacks clear acceptance criteria, then communicates the completion contract as natural prose.
+- `pause-framework` is the mandatory first reasoning step for every non-trivial request; it applies all five PAUSE checks internally and communicates the result as natural prose.
+- `success-criteria` is mandatory for every actionable request or goal-setting process; it invokes PAUSE first, applies all seven SUCCESS checks internally, and communicates one combined completion contract as natural prose.
 - `deterministic-writing` turns plans, specs, and change requests into unambiguous implementation text.
 - `decision-analysis` compares credible options when competing constraints make the choice consequential.
 - `project-architecture` guides repo, package, and service layout decisions.

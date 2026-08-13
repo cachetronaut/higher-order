@@ -2,8 +2,8 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "higher-order",
   "displayName": "Higher Order",
-  "version": "0.2.1",
-  "description": "Selective skills for clarifying consequential work, defining completion, comparing options, and connecting product taste with implementation structure.",
+  "version": "0.2.2",
+  "description": "Mandatory PAUSE and SUCCESS reasoning foundations plus focused skills for decisions, architecture, writing, and product judgment.",
   "author": {
     "name": "Higher Order"
   },

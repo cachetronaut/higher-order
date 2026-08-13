@@ -1,6 +1,6 @@
 ---
 name: decision-analysis
-description: Compare and recommend among three or more credible options when the choice involves competing constraints, meaningful tradeoffs, or material consequences and cannot be settled by a command, test, established project rule, or specialized skill. Do not use merely because the user says "think," asks for an explanation, or presents a decision with one clearly dominant answer.
+description: "Compare and recommend among three or more credible options when the choice involves competing constraints, meaningful tradeoffs, or material consequences. IMPORTANT: Decision analysis is an actionable task, so YOU MUST invoke success-criteria first; SUCCESS invokes pause-framework before defining what a good decision requires. Do not use decision-analysis merely because the user says 'think,' asks for an explanation, or presents a choice settled by a command, test, established project rule, or clearly dominant constraint."
 ---
 
 # Decision Analysis
@@ -8,6 +8,8 @@ description: Compare and recommend among three or more credible options when the
 ## Purpose
 
 Use this skill to make a consequential choice understandable and reviewable without exposing private chain-of-thought or pretending that subjective judgment is mathematically certain.
+
+**IMPORTANT: Before generating, comparing, scoring, or recommending options, YOU MUST invoke and complete `success-criteria`; SUCCESS invokes and completes `pause-framework` first.** Use PAUSE to establish the decision context and SUCCESS to define what a good decision must achieve and how the recommendation will be judged.
 
 Ordinary reasoning does not require this workflow. If a command, validator, project instruction, specialist skill, or clearly dominant constraint determines the answer, follow that source directly. If the user merely asks for careful thought, an explanation, or a comparison between options with an obvious winner, respond normally.
 
@@ -55,4 +57,4 @@ Do not persist an audited comparison when the user asked only for a recommendati
 
 Use a specialist skill such as `project-architecture` to supply domain rules when the decision concerns that domain. Use this skill only if a meaningful choice remains after those rules are applied.
 
-Use `pause-framework` when the artifact to be produced after the decision is materially ambiguous. Use `success-criteria` when the subsequent implementation lacks a clear definition of done. Neither skill is required merely to make a recommendation.
+SUCCESS is mandatory for every decision analysis, and SUCCESS makes PAUSE mandatory first. Use the order PAUSE, then SUCCESS, then Decision Analysis.

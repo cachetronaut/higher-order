@@ -1,19 +1,19 @@
 ---
 name: success-criteria
-description: Define observable completion, validation, and scope for non-trivial implementation, investigation, refactoring, migration, or performance work when clear acceptance criteria or evidence have not been provided. Do not use for factual answers, status reports, routine commits or pushes, mechanical edits, single-command tasks, or work with explicit completion and verification requirements.
+description: "IMPORTANT: SUCCESS is mandatory for every actionable request or goal-setting process. YOU MUST invoke pause-framework first, then apply all seven SUCCESS checks before planning or execution to define the outcome, utility, criteria, checkpoints, evidence, simplest sufficient approach, and scope. Use for implementation, investigation, writing, planning, refactoring, decisions, and goals, even when the user supplies acceptance criteria. Skip only acknowledgments and direct factual answers with no task to perform."
 ---
 
 # SUCCESS — Define Done Before Acting
 
 ## Purpose
 
-Use SUCCESS when meaningful work could drift, end prematurely, or be declared complete without evidence because its outcome or verification is unclear. Apply it selectively according to the description, then use every acronym component as an internal goal-setting check before substantive work.
+**IMPORTANT: YOU MUST invoke SUCCESS for every actionable request or goal-setting process. YOU MUST invoke and complete `pause-framework` before evaluating SUCCESS.** Use every SUCCESS component as an internal goal-setting check before planning or execution.
 
-If the user has already supplied a valuable end state, observable criteria, proportionate validation, evidence, and a clear scope boundary, exit this skill silently. Do not restate an adequate definition of done as framework ceremony.
+Do not treat supplied acceptance criteria as permission to skip SUCCESS. Use the framework to confirm and complete what the user provided without inventing redundant requirements. Skip SUCCESS only for acknowledgments and direct factual answers with no task to perform.
 
 ## Apply the SUCCESS framework internally
 
-Evaluate all seven components before responding. These components define the reasoning process, not the user-facing format.
+**IMPORTANT: YOU MUST evaluate all seven components before responding.** These components define the reasoning process, not the user-facing format.
 
 ### S — Seek Success
 
@@ -49,7 +49,9 @@ Ask a focused question only when a missing criterion would materially change the
 
 ## Respond as one natural paragraph
 
-Translate the SUCCESS conclusions into a single cohesive prose paragraph before substantive work. The paragraph may contain multiple sentences, but it must not use acronym headings, labels, bullets, a checklist, or the word `stateback`. Do not announce that SUCCESS ran.
+**IMPORTANT: YOU MUST translate the combined PAUSE and SUCCESS conclusions into a single cohesive prose paragraph before substantive work.** The paragraph may contain multiple sentences, but it must not use acronym headings, labels, bullets, a checklist, or the word `stateback`. Do not announce that either framework ran.
+
+If the user explicitly requires an exact output with no preamble, complete both frameworks internally and preserve that output contract instead of adding the paragraph. This is an output-format exception, not permission to skip PAUSE or SUCCESS.
 
 Use this shape as guidance, not as a form to fill mechanically:
 
@@ -73,6 +75,6 @@ When the task specifically calls for failure-proofing, scope reduction, or a des
 
 ## Coordinate with related skills
 
-If `pause-framework` also applies, complete both internal frameworks and combine their conclusions into one natural working-agreement paragraph. If the assignment is clear but completion is not, use SUCCESS alone.
+**IMPORTANT: PAUSE always applies when SUCCESS runs. YOU MUST complete PAUSE first**, then complete SUCCESS and combine both frameworks' conclusions into one natural working-agreement paragraph. Never run SUCCESS alone.
 
 Use `visible-work` when the user needs intermediate checkpoints or a plan. Use `deterministic-writing` when a specification must be implementation-ready. Neither skill makes SUCCESS mandatory when its trigger conditions are absent.

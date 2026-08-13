@@ -1,19 +1,19 @@
 ---
 name: pause-framework
-description: Clarify an intended artifact before creating or substantially changing it when ambiguity about its purpose, audience, use, constraints, or consequential exceptions could materially alter the result. Use for ambiguous or high-consequence code, documents, prompts, plans, and designs. Do not use for factual answers, reviews, mechanical edits, routine commands, or work whose scope and constraints are already explicit.
+description: "IMPORTANT: PAUSE is mandatory before every reasoning process and every actionable task. YOU MUST invoke it before interpreting intent, planning, choosing an approach, making a decision, setting a goal, defining success, or producing an artifact. YOU MUST also invoke it before success-criteria and decision-analysis. Apply all five PAUSE checks internally, then communicate their conclusions as one natural prose paragraph. Skip only acknowledgments and direct factual answers with no task to perform."
 ---
 
 # PAUSE — Clarify Before Building
 
 ## Purpose
 
-Use PAUSE to prevent material ambiguity from becoming an implementation decision the user never made. Apply it selectively according to the description, then use every acronym component as an internal scoping check before substantive work.
+**IMPORTANT: YOU MUST invoke and complete PAUSE before every reasoning process and every actionable task.** Use every acronym component as an internal scoping check before interpreting the task, defining success, comparing options, planning, or acting.
 
-If the request already establishes the result, consumer, intended use, material constraints, and consequential exceptions, exit this skill silently. Do not add a ceremonial preamble to an already-clear task.
+Do not treat a clear or mechanical task as permission to skip PAUSE. Existing clarity makes the framework faster; it does not make the reasoning unnecessary. Skip PAUSE only for acknowledgments and direct factual answers with no task to perform.
 
 ## Apply the PAUSE framework internally
 
-Evaluate all five components before responding. These components are the reasoning structure, not the user-facing format.
+**IMPORTANT: YOU MUST evaluate all five components before responding.** These components are the reasoning structure, not the user-facing format.
 
 ### P — Purpose
 
@@ -39,7 +39,9 @@ Infer ordinary, low-risk details from repository context and established convent
 
 ## Respond as one natural paragraph
 
-Translate the PAUSE conclusions into a single cohesive prose paragraph before substantive work. The paragraph may contain multiple sentences, but it must not use acronym headings, labels, bullets, a checklist, or the word `stateback`. Do not announce that PAUSE ran.
+**IMPORTANT: YOU MUST translate the PAUSE conclusions into a single cohesive prose paragraph before substantive work.** The paragraph may contain multiple sentences, but it must not use acronym headings, labels, bullets, a checklist, or the word `stateback`. Do not announce that PAUSE ran.
+
+If the user explicitly requires an exact output with no preamble, complete PAUSE internally and preserve that output contract instead of adding the paragraph. This is an output-format exception, not permission to skip PAUSE when another mandatory skill invokes it.
 
 Use this shape as guidance, not as a form to fill mechanically:
 
@@ -57,6 +59,6 @@ Every PAUSE component must be considered internally. Include its conclusion in t
 
 ## Coordinate with related skills
 
-If `success-criteria` also applies, complete both internal frameworks and combine their conclusions into one natural working-agreement paragraph. Do not emit separate PAUSE and SUCCESS sections.
+If `success-criteria` runs, **YOU MUST complete PAUSE first**, then complete SUCCESS and combine both frameworks' conclusions into one natural working-agreement paragraph. Do not emit separate PAUSE and SUCCESS sections.
 
 Use `prompt-probing` when material gaps require answers before a safe next step can be chosen. Use `visible-work` when the user needs a plan or review checkpoint. Neither skill is an automatic dependency.
