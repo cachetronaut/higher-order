@@ -9,7 +9,7 @@ description: Use when writing specifications, change requests, ticket comments, 
 
 Write so that a developer, non-native English speaker, or automated system can implement every sentence without asking a question. Ambiguity is a defect.
 
-Before writing, use `pause-framework` only when material ambiguity about the document's purpose, audience, use, constraints, or exceptions could change its content. Use `success-criteria` only when completion or verification is unclear. Neither skill is a mandatory precondition.
+Before writing, use `pause-framework` only when material ambiguity about the document's purpose, audience, use, constraints, or exceptions could change its content. Use `success-criteria` only when completion or verification is unclear. When either applies, complete its full internal acronym framework before translating the conclusions into prose. Neither skill is a mandatory precondition.
 
 ## Core Principles
 
@@ -29,7 +29,7 @@ For filler words to avoid and common mistakes, see `references/reference.md`.
 
 ## Natural Working Agreements
 
-When another skill calls for a visible working agreement, write it as one natural paragraph. Do not expose framework mnemonics, repeated labels, or checklist headings unless the user asks to inspect the framework.
+When another skill calls for a visible working agreement, write it as one natural paragraph. Preserve the framework as the internal reasoning structure, but do not expose its mnemonic, repeated labels, bullets, or checklist headings unless the user asks to inspect it.
 
 Use this shape:
 
@@ -49,13 +49,13 @@ The user-facing output should read like a concise working agreement, not evidenc
 
 ## Relationship to Other Skills
 
-These skills are independent and may be combined when their own descriptions match.
+These skills are independent and may be combined when their own descriptions match. Selective activation changes when they run, not the completeness of their internal frameworks.
 
-- **pause-framework** clarifies what is being written, for whom, and under which material constraints when those facts are ambiguous.
-- **success-criteria** defines completion and verification when they are missing.
+- **pause-framework** applies all five PAUSE components internally to clarify what is being written, for whom, how it will be used, under which material constraints, and with which consequential exceptions.
+- **success-criteria** applies all seven SUCCESS components internally to define the end state, utility, proof, checkpoints, evidence, simplicity, and scope.
 - **deterministic-writing** expresses the resulting specification so its reader can act without guessing.
 
-When both related skills apply, produce one natural working-agreement paragraph. When neither applies, write the requested specification directly.
+When both related skills apply, complete both frameworks internally and produce one natural working-agreement paragraph. When neither applies, write the requested specification directly.
 
 ## Quality Checklist
 

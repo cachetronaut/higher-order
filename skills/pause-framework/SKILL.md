@@ -3,46 +3,60 @@ name: pause-framework
 description: Clarify an intended artifact before creating or substantially changing it when ambiguity about its purpose, audience, use, constraints, or consequential exceptions could materially alter the result. Use for ambiguous or high-consequence code, documents, prompts, plans, and designs. Do not use for factual answers, reviews, mechanical edits, routine commands, or work whose scope and constraints are already explicit.
 ---
 
-# Clarify Before Building
+# PAUSE — Clarify Before Building
 
 ## Purpose
 
-Use this skill to prevent material ambiguity from becoming an implementation decision the user never made. It is a selective scoping check, not a universal preflight or a reason to narrate obvious facts.
+Use PAUSE to prevent material ambiguity from becoming an implementation decision the user never made. Apply it selectively according to the description, then use every acronym component as an internal scoping check before substantive work.
 
-## Establish the assignment
+If the request already establishes the result, consumer, intended use, material constraints, and consequential exceptions, exit this skill silently. Do not add a ceremonial preamble to an already-clear task.
 
-First decide whether plausible interpretations would produce meaningfully different artifacts, risks, or commitments. If the request already identifies the desired result, its consumer, the important constraints, and the relevant boundaries, continue without announcing this skill or adding a ceremonial preamble.
+## Apply the PAUSE framework internally
 
-When clarification is useful, form a concise understanding of what will be produced, who or what will use it, how long it must remain useful, which operational or safety constraints matter, and where the default approach would fail. Include only details that affect the work. Do not force security, lifecycle, or edge-case language into a task where those considerations are immaterial.
+Evaluate all five components before responding. These components are the reasoning structure, not the user-facing format.
 
-Infer ordinary low-risk details from repository context and established conventions. Ask the user only when different answers would materially change the result, create a consequential commitment, or cross a safety or permission boundary.
+### P — Purpose
 
-## Communicate naturally
+Define the concrete result the work should produce. Describe an outcome rather than an activity: “a focused migration runbook” is a result; “write documentation” is merely a process.
 
-Before substantive work, state the assignment as one short paragraph. Do not use acronym headings, framework labels, field names, or the word `stateback`.
+### A — Audience
 
-Use this shape as guidance rather than a form:
+Identify the person, team, system, or downstream agent that will consume the result. Account for the context or expertise that materially changes what the artifact must contain.
+
+### U — Usage
+
+Determine how the result will be used and how long it must remain useful. Distinguish one-time, repeated, disposable, and long-lived use when that difference affects quality, safeguards, or extensibility.
+
+### S — Settings and Security
+
+Identify the operational environment, permissions, privacy or safety boundaries, and other constraints that affect the work. Do not invent security concerns when none are relevant, but do not omit a material risk merely to keep the response short.
+
+### E — Exceptions
+
+Identify the one or two conditions most likely to invalidate the default approach or require review. If many unrelated exceptions emerge, narrow or split the purpose instead of hiding excessive scope inside one artifact.
+
+Infer ordinary, low-risk details from repository context and established conventions. Ask only when different answers would materially change the result, create a consequential commitment, cross a permission boundary, or make safe execution impossible.
+
+## Respond as one natural paragraph
+
+Translate the PAUSE conclusions into a single cohesive prose paragraph before substantive work. The paragraph may contain multiple sentences, but it must not use acronym headings, labels, bullets, a checklist, or the word `stateback`. Do not announce that PAUSE ran.
+
+Use this shape as guidance, not as a form to fill mechanically:
 
 ```text
-I’ll produce <concrete result> for <audience or consumer> to support <intended use>. I’ll keep it within <material constraints or boundaries> and pause for review if <critical condition that would change the approach>.
+I’ll produce <purpose> for <audience> to support <usage>. I’ll work within <settings, security, or operational constraints> and account for <one or two consequential exceptions>.
 ```
 
 For example:
 
 ```text
-I’ll prepare the migration runbook for the on-call team to use during the production rollout. I’ll keep it limited to the approved migration, account for rollback and access constraints, and pause for review if the existing data cannot be migrated safely.
+I’ll prepare the migration runbook for the on-call team to use during the production rollout. I’ll keep it limited to the approved migration and existing access boundaries, and I’ll stop for review if the source data cannot be transformed safely or rollback cannot be demonstrated.
 ```
 
-Keep the paragraph shorter when fewer details matter. If no visible clarification would help the user understand or correct the assignment, proceed silently.
+Every PAUSE component must be considered internally. Include its conclusion in the paragraph when it affects the assignment; do not pad the paragraph with artificial constraints or exceptions solely to make the framework visible.
 
 ## Coordinate with related skills
 
-If `success-criteria` also applies, combine the scoped assignment and definition of done into one natural working-agreement paragraph. Do not emit separate framework declarations.
+If `success-criteria` also applies, complete both internal frameworks and combine their conclusions into one natural working-agreement paragraph. Do not emit separate PAUSE and SUCCESS sections.
 
-Use `prompt-probing` when missing information requires user answers before a safe next step can be chosen. Use `visible-work` when the user needs a plan or review checkpoint. Neither skill is an automatic dependency.
-
-## Stop conditions
-
-Stop and ask a focused question only when the unresolved choice would materially change the artifact, introduce significant risk, create an external commitment, or exceed the user’s authority. Otherwise state a reasonable assumption when it is useful and continue.
-
-If this skill was loaded for a factual answer, routine command, mechanical edit, review-only request, or already-explicit assignment, exit it silently and perform the task normally.
+Use `prompt-probing` when material gaps require answers before a safe next step can be chosen. Use `visible-work` when the user needs a plan or review checkpoint. Neither skill is an automatic dependency.
