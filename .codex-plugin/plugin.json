@@ -1,7 +1,7 @@
 {
   "name": "higher-order",
-  "version": "0.2.2",
-  "description": "Mandatory PAUSE and SUCCESS reasoning foundations plus focused skills for decisions, architecture, writing, and product judgment.",
+  "version": "0.3.0",
+  "description": "Mandatory PAUSE, SUCCESS, and task routing plus focused skills for decisions, architecture, writing, and product judgment.",
   "author": {
     "name": "Higher Order"
   },
@@ -12,6 +12,7 @@
     "prompting",
     "clarification",
     "planning",
+    "task-routing",
     "design",
     "architecture",
     "writing"
@@ -20,7 +21,7 @@
   "interface": {
     "displayName": "Higher Order",
     "shortDescription": "Selective skills for clearer assignments, decisions, plans, designs, and architecture.",
-    "longDescription": "Higher Order packages reusable Codex skills for better agent work: probing vague prompts, clarifying consequential assignments, defining completion when it is missing, comparing meaningful alternatives, writing implementation-ready guidance, and connecting UI design taste with project architecture taste so users can steer before the model builds the wrong thing.",
+    "longDescription": "Higher Order packages reusable Codex skills for better agent work: probing vague prompts, defining completion, routing tasks by complexity, comparing meaningful alternatives, writing implementation-ready guidance, and connecting UI design taste with project architecture taste.",
     "developerName": "Higher Order",
     "category": "Productivity",
     "capabilities": [

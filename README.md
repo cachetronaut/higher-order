@@ -65,6 +65,7 @@ Taste is not decoration. It is the fit between what the user wants to build, how
 - `visible-work` makes the agent's interpretation, assumptions, rationale, and checkpoints visible to the user.
 - `pause-framework` is the mandatory first reasoning step for every non-trivial request; it applies all five PAUSE checks internally and communicates the result as natural prose.
 - `success-criteria` is mandatory for every actionable request or goal-setting process; it invokes PAUSE first, applies all seven SUCCESS checks internally, and communicates one combined completion contract as natural prose.
+- `task-routing` scores actionable work, selects direct or delegated execution, and sets proportional verification depth.
 - `deterministic-writing` turns plans, specs, and change requests into unambiguous implementation text.
 - `decision-analysis` compares credible options when competing constraints make the choice consequential.
 - `project-architecture` guides repo, package, and service layout decisions.
