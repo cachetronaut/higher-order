@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "higher-order",
   "displayName": "Higher Order",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Mandatory PAUSE, SUCCESS, and task routing plus focused skills for decisions, architecture, writing, and product judgment.",
   "author": {
     "name": "Higher Order"
